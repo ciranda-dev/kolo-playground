@@ -338,7 +338,7 @@ func (p *peer) admit(ctx context.Context, b *kolobraid.Braid, args []string) (an
 			return nil, fmt.Errorf("unknown admit option %q", a)
 		}
 	}
-	// without roles a joiner is a plain member since braid v0.1.1; the default grows the braid toward MinSettlers seats
+	// without roles a joiner is a plain member; the default grows the braid toward MinSettlers seats
 	opts.GrowSettlers = grow && opts.Roles == nil
 	t0 := time.Now()
 	// the harness trusts its driver; an application passes the joiner key kolo-invite authenticated (Requested.Joiner)
